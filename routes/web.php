@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -33,10 +34,14 @@ Route::get('/private/Gere_unite', function () {
   return  view('./admin/unites_gere');
   
 });
-Route::get('/private/Gere_les_controles_de_gestion', function () {
-  return  view('./admin/gestion_gere');
+
+Route::get('user/create_user', function () {
+  return  view('./admin/user/cree');
   
 });
+
+Route::resource('user',UserController::class);
+
 });
 
 
